@@ -3,7 +3,7 @@ import HeroSection from './components/HeroSection/HeroSection';
 import Footer from './components/Footer/Footer';
 import List from './components/List/List';
 import { fetchPosts } from './api/fetchPosts';
-import Segment from './components/Segment';
+import Segment from './components/Segment/Segment';
 
 function HomePage() {
   const [posts, setPosts] = useState([]);
