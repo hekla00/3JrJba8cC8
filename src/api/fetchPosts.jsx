@@ -1,5 +1,10 @@
 // Fetch the top or new posts from the Hacker News API
-export const fetchPosts = async (category, page = 1, limit = 20) => {
+export const fetchPosts = async (
+  category,
+  query = '',
+  page = 1,
+  limit = 20
+) => {
   // The API URLs for the top and new stories
   const apiUrls = {
     top: 'https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty',
@@ -25,8 +30,13 @@ export const fetchPosts = async (category, page = 1, limit = 20) => {
       })
     );
 
+    // Filter stories based on the search query
+    const filteredStories = stories.filter((story) =>
+      story.title.toLowerCase().includes(query.toLowerCase())
+    );
+
     return {
-      stories,
+      stories: filteredStories,
       total: storyIds.length,
     };
   } catch (error) {
