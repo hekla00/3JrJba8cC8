@@ -6,4 +6,8 @@ module.exports = {
   setupFilesAfterEnv: [
     '/Users/heklasamuelsdottir/codeChallenge/node_modules/@testing-library/jest-dom',
   ],
+  moduleNameMapper: {
+    '\\.(jpg|jpeg|png|gif|svg)$':
+      '/Users/heklasamuelsdottir/codeChallenge/__mocks__/fileMock.js',
+  },
 };
