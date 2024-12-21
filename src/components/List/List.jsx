@@ -1,5 +1,5 @@
 import { ChatBubbleLeftIcon, BriefcaseIcon } from '@heroicons/react/24/outline';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 export default function List({ posts }) {
   const [currentPage, setCurrentPage] = useState(1);

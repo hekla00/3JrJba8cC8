@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import HeroSection from './components/HeroSection';
-import Footer from './components/Footer';
-import List from './components/List';
+import HeroSection from './components/HeroSection/HeroSection';
+import Footer from './components/Footer/Footer';
+import List from './components/List/List';
 import { fetchPosts } from './api/fetchPosts';
 
 function HomePage() {
