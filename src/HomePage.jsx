@@ -20,7 +20,7 @@ function HomePage() {
       // Fetch the posts based on the category
       const stories = await fetchPosts(category);
       setPosts(stories);
-      //   Set loading to false when the posts are fetched
+      // Set loading to false when the posts are fetched
       setLoading(false);
     } catch (error) {
       setError(error.message);
@@ -28,12 +28,12 @@ function HomePage() {
     }
   };
 
-  // Load the stories when the page loads
+  // Load the stories when the page loads or the category changes
   useEffect(() => {
     loadStories(activeCategory);
   }, [activeCategory]);
 
-  //   function to handle category change
+  // Function to handle category change
   const handleCategoryChange = (category) => {
     setActiveCategory(category);
   };
