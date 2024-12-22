@@ -1,6 +1,6 @@
 import { ChatBubbleLeftIcon, BriefcaseIcon } from '@heroicons/react/24/outline';
-import { useState } from 'react';
-import Pagination from './Pagination';
+import React, { useState } from 'react';
+import Pagination from '../../components/Pagination/Pagination';
 
 export default function List({ posts }) {
   const [currentPage, setCurrentPage] = useState(1);
