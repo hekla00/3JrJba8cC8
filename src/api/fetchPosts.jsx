@@ -12,7 +12,7 @@ export const fetchMaxItemId = async () => {
 };
 
 // Fetch the top or new posts from the Hacker News API
-export const fetchPosts = async () => {
+export const fetchPosts = async (category) => {
   // The API URLs for the top and new stories
   const apiUrls = {
     top: 'https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty',
@@ -21,7 +21,7 @@ export const fetchPosts = async () => {
 
   //   Fetching for the top posts to start with
   try {
-    const response = await fetch(apiUrls['top']);
+    const response = await fetch(apiUrls[category]);
     const storyIds = await response.json();
 
     // Fetch the details of each story using the ids (up to 100 items for now)
