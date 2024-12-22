@@ -1,5 +1,6 @@
 import { ChatBubbleLeftIcon, BriefcaseIcon } from '@heroicons/react/24/outline';
 import React, { useState } from 'react';
+import Pagination from '../../components/Pagination/Pagination';
 
 export default function List({ posts }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -9,6 +10,13 @@ export default function List({ posts }) {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
   //   console.log(posts);
+
+  // Calculate total pages
+  const totalPages = Math.ceil(posts.length / postsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
   return (
     <div>
       <ul className='divide-y divide-gray-100'>
@@ -92,6 +100,11 @@ export default function List({ posts }) {
           </li>
         ))}
       </ul>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />
     </div>
   );
 }
