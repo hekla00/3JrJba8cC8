@@ -4,34 +4,34 @@ import Footer from './components/Footer/Footer';
 import List from './components/List/List';
 import { fetchPosts } from './api/fetchPosts';
 import Segment from './components/Segment/Segment';
+import Search from './components/Search/Search';
 
 function HomePage() {
   const [posts, setPosts] = useState([]);
+  const [activeCategory, setActiveCategory] = useState('top');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [activeCategory, setActiveCategory] = useState('top');
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
+  const [query, setQuery] = useState('');
   const observer = useRef();
 
   const ITEMS_PER_PAGE = 20;
 
-  // Function to load the stories
-  const loadStories = async (category, page = 1) => {
+  // Fetch stories data based on active category and pagination
+  const loadStories = async (category, query = '', page = 1) => {
     setLoading(true);
     setError(null);
 
     try {
-      // Fetch the posts based on the category
       const { stories, total } = await fetchPosts(
         category,
+        query,
         page,
         ITEMS_PER_PAGE
       );
       // Set the posts
-      setPosts((prevPosts) =>
-        page === 1 ? stories : [...prevPosts, ...stories]
-      );
+      setPosts((prevPosts) => [...prevPosts, ...stories]);
       // Set the total number of pages based on the total number of posts
       setTotalPages(Math.ceil(total / ITEMS_PER_PAGE));
       // Set loading to false when the posts are fetched
@@ -42,16 +42,19 @@ function HomePage() {
     }
   };
 
-  // Load the stories when the page loads
+  // Fetch stories whenever the category or page changes
   useEffect(() => {
     setPosts([]);
     setCurrentPage(1);
-    loadStories(activeCategory, 1);
-  }, [activeCategory]);
+    loadStories(activeCategory, query, 1);
+  }, [activeCategory, query]);
 
-  //   function to handle category change
   const handleCategoryChange = (category) => {
     setActiveCategory(category);
+  };
+
+  const handleSearch = (query) => {
+    setQuery(query);
   };
 
   //   Function to load more posts when the user scrolls to the bottom
@@ -62,12 +65,12 @@ function HomePage() {
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && currentPage < totalPages) {
           setCurrentPage((prevPage) => prevPage + 1);
-          loadStories(activeCategory, currentPage + 1);
+          loadStories(activeCategory, query, currentPage + 1);
         }
       });
       if (node) observer.current.observe(node);
     },
-    [loading, currentPage, totalPages, activeCategory]
+    [loading, currentPage, totalPages, activeCategory, query]
   );
 
   return (
@@ -79,9 +82,11 @@ function HomePage() {
           activeCategory={activeCategory}
           onCategoryChange={handleCategoryChange}
         />
+        <Search onSearch={handleSearch} />
         {/* Loading / Error State */}
         {loading && <p>Loading posts...</p>}
         {error && <p>{error}</p>}
+
         {/* Display the posts */}
         <List posts={posts} />
         <div ref={lastPostElementRef}></div>
