@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import HeroSection from './components/HeroSection';
-import Footer from './components/Footer';
-import Segment from './components/Segment';
-import List from './components/List';
+import HeroSection from './components/HeroSection/HeroSection';
+import Footer from './components/Footer/Footer';
+import List from './components/List/List';
 import { fetchPosts } from './api/fetchPosts';
-import Search from './components/Search';
+import Segment from './components/Segment/Segment';
+import Search from './components/Search/Search';
 
 function HomePage() {
   const [posts, setPosts] = useState([]);

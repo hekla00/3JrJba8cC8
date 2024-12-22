@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1734823520824" clover="3.2.0">
+  <project timestamp="1734823520824" name="All files">
+    <metrics statements="21" coveredstatements="19" conditionals="10" coveredconditionals="9" methods="14" coveredmethods="12" elements="45" coveredelements="40" complexity="0" loc="21" ncloc="21" packages="5" files="5" classes="5"/>
+    <package name="Footer">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="Footer.jsx" path="/Users/heklasamuelsdottir/codeChallenge/src/components/Footer/Footer.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="28" count="32" type="stmt"/>
+      </file>
+    </package>
+    <package name="Header">
+      <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+      <file name="Header.jsx" path="/Users/heklasamuelsdottir/codeChallenge/src/components/Header/Header.jsx">
+        <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="HeroSection">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="HeroSection.jsx" path="/Users/heklasamuelsdottir/codeChallenge/src/components/HeroSection/HeroSection.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="List">
+      <metrics statements="7" coveredstatements="7" conditionals="6" coveredconditionals="5" methods="2" coveredmethods="2"/>
+      <file name="List.jsx" path="/Users/heklasamuelsdottir/codeChallenge/src/components/List/List.jsx">
+        <metrics statements="7" coveredstatements="7" conditionals="6" coveredconditionals="5" methods="2" coveredmethods="2"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="Segment">
+      <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <file name="Segment.jsx" path="/Users/heklasamuelsdottir/codeChallenge/src/components/Segment/Segment.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

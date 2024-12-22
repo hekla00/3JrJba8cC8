@@ -1,3 +1,4 @@
+import React from 'react';
 export default function HeroSection() {
   return (
     <div className='flex flex-col items-center justify-center mx-auto max-w-2xl text-center pt-0 py-24'>
