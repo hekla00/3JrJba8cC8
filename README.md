@@ -24,5 +24,5 @@ This project is a redesigned version of Hacker News, built using React. It uses 
 ## Setup Instructions
 1. Clone the repository.
 2. Install dependencies: `npm install`.
-3. Run the app: `npm start`.
+3. Run the app: `npm run dev`.
 4. Run tests: `npm test` for unit tests.
